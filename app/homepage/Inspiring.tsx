@@ -115,7 +115,7 @@ export default function Inspiring() {
     >
       <div className="max-w-6xl w-full rounded-3xl lg:p-px">
         <div className="bg-white/5 backdrop-blur-2xl rounded-3xl lg:p-10 max-sm:p-4 shadow-[0_0_60px_rgba(255,255,255,0.05)]">
-          <h2 className="text-center max-sm:text-3xl text-5xl lg:px-20 lg:font-semibold text-[#292727e0] mb-16">
+          <h2 className="text-center max-sm:text-3xl text-6xl lg:px-20 text-[#292727e0] mb-16">
             Inspiring transformations{" "}
             <span className="text-[#29272786]">from real people like you</span>
           </h2>

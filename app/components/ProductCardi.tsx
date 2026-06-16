@@ -8,7 +8,7 @@ import PriceView from "../components/PriceView";
 const ProductCard = ({ product }: { product: Product }) => {
   return (
     <div>
-      <div>
+      <div className="p-2 md:p-4">
         <p className=" line-clamp-1 md:text-xl">{product?.name}</p>
         {product?.images && (
           <Link href={`/product/${product?.slug?.current}`} className="group">

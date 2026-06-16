@@ -42,7 +42,7 @@ const HowItWorks = () => {
         }}
       >
         <motion.div
-          className="group relative md:h-110 hover:shadow-lg rounded-lg text-center justify-center overflow-hidden bg-gray-200"
+          className="group relative md:h-110 hover:shadow-lg rounded-lg text-center justify-center overflow-hidden bg-[#e8e8e8]"
           variants={{
             hidden: { opacity: 0, y: 30 },
             visible: {
@@ -67,7 +67,7 @@ const HowItWorks = () => {
           </div>
         </motion.div>
         <motion.div
-          className="group relative md:h-110 hover:shadow-lg rounded-lg text-center justify-center overflow-hidden bg-gray-200"
+          className="group relative md:h-110 hover:shadow-lg rounded-lg text-center justify-center overflow-hidden bg-[#e8e8e8]"
           variants={{
             hidden: { opacity: 0, y: 30 },
             visible: {
@@ -92,7 +92,7 @@ const HowItWorks = () => {
           </div>
         </motion.div>
         <motion.div
-          className="group relative md:h-110 hover:shadow-lg rounded-lg text-center justify-center overflow-hidden bg-gray-200"
+          className="group relative md:h-110 hover:shadow-lg rounded-lg text-center justify-center overflow-hidden bg-[#e8e8e8]"
           variants={{
             hidden: { opacity: 0, y: 30 },
             visible: {

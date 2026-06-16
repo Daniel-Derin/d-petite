@@ -1,7 +1,5 @@
 
 import Hero from "./Hero";
-import { AboutSection } from "./About";
-import { PhilosophySection } from "./Phisology";
 import { Footer } from "../components/Footer";
 import ProductGrid from "./ProductGrid";
 import Navbar from "../components/Navbar";
@@ -14,6 +12,7 @@ import Inspiring from "./Inspiring";
 import Lister from "./Lister";
 import HowItWorks from "./HowItWorks";
 import Boost from "./Boost";
+import Testimonial from "./Testimonial";
 
 const Homepage = async () => {
   return (
@@ -26,8 +25,7 @@ const Homepage = async () => {
       <Lister />
       <HowItWorks />
       <Boost />
-      <AboutSection />
-      <PhilosophySection />
+      <Testimonial />
       <Footer />
     </div>
   );
