@@ -1,14 +1,19 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import Image from "next/image";
 import pink from "../../public/pink.jpg";
 import cream from "../../public/cream.png";
 import cream2 from "../../public/cream2.png";
 import cream4 from "../../public/cream4.png";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 
 import { PiFlowerLotusThin } from "react-icons/pi";
 
-
 const YourDaily = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
     <div className="lg:px-20 px-6 pt-30">
       <div className="w-full text-center justify-center lg:px-20">
@@ -26,8 +31,34 @@ const YourDaily = () => {
         </div>
       </div>
       <p className="pt-10 text-2xl text-[#292727e0]">Featured Products</p>
-      <div className="grid lg:grid-cols-3 mt-6 w-full gap-6">
-        <div className="group relative h-90 hover:shadow-lg rounded-lg  hover:scale-110 duration-300 overflow-hidden">
+      <motion.div
+        className="grid lg:grid-cols-3 mt-6 w-full gap-6"
+        ref={ref}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.18,
+              delayChildren: 0.1,
+            },
+          },
+        }}
+      >
+        <motion.div
+          className="group relative h-90 hover:shadow-lg rounded-lg  hover:scale-110 duration-300 overflow-hidden"
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.5 },
+            },
+          }}
+        >
           <Image src={pink} alt="" className="w-full h-100" />
           <div className="w-full p-4 h-full -mt-99">
             <Image
@@ -45,8 +76,18 @@ const YourDaily = () => {
               Shop Now
             </button>
           </div>
-        </div>
-        <div className="group relative h-90 hover:shadow-lg rounded-lg  hover:scale-110 duration-300 overflow-hidden bg-purple-100">
+        </motion.div>
+        <motion.div
+          className="group relative h-90 hover:shadow-lg rounded-lg  hover:scale-110 duration-300 overflow-hidden bg-purple-100"
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.5 },
+            },
+          }}
+        >
           <div className="w-full p-4 h-full">
             <Image
               src={cream2}
@@ -63,15 +104,21 @@ const YourDaily = () => {
               Shop Now
             </button>
           </div>
-        </div>
-        <div className="group relative h-90 hover:shadow-lg rounded-lg  hover:scale-110 duration-300 overflow-hidden bg-blue-200">
+        </motion.div>
+        <motion.div
+          className="group relative h-90 hover:shadow-lg rounded-lg  hover:scale-110 duration-300 overflow-hidden bg-blue-200"
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.5 },
+            },
+          }}
+        >
           <div className="w-full h-full ">
             <div className="w-full h-full relative mb-0">
-              <Image
-                src={cream4}
-                alt=""
-                className="w-full relative lg:mt-5"
-              />
+              <Image src={cream4} alt="" className="w-full relative lg:mt-5" />
             </div>
             <div className="w-90 h-30 -mt-90 p-4 object-cover rounded-lg relative z-10">
               <button className="flex pl-4 pr-2 py-1 bg-white rounded-full pt-2">
@@ -85,9 +132,12 @@ const YourDaily = () => {
               Confidence starts with skincare
             </h1>
           </div>
-        </div>
-        <p className=" text-[#29272786]">Result may vary. Consistent use helps improve skin texture, hydration and tone</p>
-      </div>
+        </motion.div>
+        <p className=" text-[#29272786]">
+          Result may vary. Consistent use helps improve skin texture, hydration
+          and tone
+        </p>
+      </motion.div>
     </div>
   );
 };

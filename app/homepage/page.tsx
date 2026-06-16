@@ -11,6 +11,9 @@ import YourDaily from "./YourDaily";
 import GlowSlider from "../components/SliderSec";
 import Petite from "./Petite";
 import Inspiring from "./Inspiring";
+import Lister from "./Lister";
+import HowItWorks from "./HowItWorks";
+import Boost from "./Boost";
 
 const Homepage = async () => {
   return (
@@ -20,10 +23,9 @@ const Homepage = async () => {
       <YourDaily />
       <Petite />
       <Inspiring />
-      <NewArrival />
-      <OurPopular />
-      
-      <ProductGrid />
+      <Lister />
+      <HowItWorks />
+      <Boost />
       <AboutSection />
       <PhilosophySection />
       <Footer />

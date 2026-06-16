@@ -7,6 +7,7 @@ import { sales } from "../components/Export";
 import Image from "next/image";
 import pef from "../../public/body.png";
 import GlowSlider from "../components/SliderSec";
+import ImageCarousel from "../components/ImageCarousel";
 
 const OurPopular = () => {
   const ref = useRef(null);
@@ -97,6 +98,7 @@ const OurPopular = () => {
           </div>
           <div className="inset-0 bg-black/30" />
         </div>
+        <ImageCarousel />
       </div>
       
     </div>

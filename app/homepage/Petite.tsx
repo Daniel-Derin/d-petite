@@ -29,7 +29,7 @@ const Petite = () => {
   return (
     <div className="mt-30">
     <div
-      className={`flex items-center justify-center transition-colors duration-500 ${
+      className={`flex items-center justify-center transition-colors duration-500 ease-in-out ${
         inView ? "bg-[#f5e9aac2]" : "bg-transparent scale-50"
       }`}
       ref={sectionRef}

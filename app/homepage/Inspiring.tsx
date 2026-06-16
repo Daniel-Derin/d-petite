@@ -80,21 +80,41 @@ export default function Inspiring() {
     rotateY.set(0);
   };
 
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }, // triggers when 50% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const ref = useRef(null);
+
   return (
     <motion.section
       ref={sectionRef}
       initial={{ opacity: 0, y: 80 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="py-24 bg-[#F4F1FC] flex justify-center"
+      className={`py-24 bg- flex justify-center transition-colors duration-500 ease-in-out ${
+        inView ? "bg-[#F4F1FC]" : "bg-transparent scale-50"
+      }`}
     >
       <div className="max-w-6xl w-full rounded-3xl lg:p-px">
-        <motion.div
-          initial={{ scale: 0.95, opacity: 0 }}
-          animate={isInView ? { scale: 1, opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white/5 backdrop-blur-2xl rounded-3xl lg:p-10 max-sm:p-4 shadow-[0_0_60px_rgba(255,255,255,0.05)]"
-        >
+        <div className="bg-white/5 backdrop-blur-2xl rounded-3xl lg:p-10 max-sm:p-4 shadow-[0_0_60px_rgba(255,255,255,0.05)]">
           <h2 className="text-center max-sm:text-3xl text-5xl lg:px-20 lg:font-semibold text-[#292727e0] mb-16">
             Inspiring transformations{" "}
             <span className="text-[#29272786]">from real people like you</span>
@@ -103,16 +123,10 @@ export default function Inspiring() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* LEFT */}
             <motion.div
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: {
-                    staggerChildren: 0.15,
-                  },
-                },
-              }}
+              ref={ref}
+              initial={{ opacity: 0, x: -50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ duration: 1 }}
               className="bg-[#D6D1F2] max-sm:h-125 h-115 rounded-2xl p-8 lg:px-20 text-center"
             >
               <motion.h3
@@ -137,15 +151,18 @@ export default function Inspiring() {
               </p>
 
               <div className="mt-8 space-y-3 p-4 rounded-2xl bg-white">
-                <h1 className="text-[#292727e0] text-lg font-semibold">Anna also has problems with:</h1>
+                <h1 className="text-[#292727e0] text-lg font-semibold">
+                  Anna also has problems with:
+                </h1>
                 {["Neck Firming", "Hair Growth", "Pigmentation"].map((item) => (
                   <div
                     key={item}
                     className="flex bg-gradient-to-r from-[#D6D1F2] via-#E6E2F8 to-[#BEB7E6] bg-[#D6D1F2] backdrop-blur-lg border border-white/10 rounded-xl px-4  hover:bg-white/20 transition py-1.5 text-left"
                   >
                     <PiFlowerLotusThin className="bg-white h-8 w-8 rounded-full p-2 text-black" />
-                    <span className="text-sm text-[#292727e0] font-semibold ml-4 pt-1">{item}</span>
-                  
+                    <span className="text-sm text-[#292727e0] font-semibold ml-4 pt-1">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -153,6 +170,9 @@ export default function Inspiring() {
 
             {/* RIGHT IMAGE */}
             <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              transition={{ duration: 1, delay: 0.3 }}
               ref={containerRef}
               style={{ rotateX, rotateY }}
               onMouseMove={(e: React.MouseEvent) => {
@@ -232,7 +252,7 @@ export default function Inspiring() {
               </div>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </motion.section>
   );

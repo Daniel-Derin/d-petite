@@ -4,7 +4,13 @@ import pef from "../../public/15.png";
 const NewArrival = () => {
   return (
     <div className="px-4 lg:px-20 bg-[#fafaf8] pt-10 lg:pt-30">
-      <h1 className="text-2xl lg:text-4xl text-[#231f20]">New Available</h1>
+      <div className="">
+        <h1 className="lg:text-5xl text-3xl text-[#292727e0]">
+          Find the perfect Solution{" "}
+          <br />
+          <span className="text-[#29272786]">for your goals</span>
+        </h1>
+      </div>
       <div className="lg:flex grid grid-cols-2 gap-5 mt-14">
         <div className="w-45 lg:w-80 lg:h-120">
           <div className="rounded-sm bg-white">
