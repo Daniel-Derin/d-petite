@@ -120,7 +120,7 @@ export default function Inspiring() {
             <span className="text-[#29272786]">from real people like you</span>
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 md:gap-12 gap-4 items-center">
             {/* LEFT */}
             <motion.div
               ref={ref}
@@ -191,7 +191,7 @@ export default function Inspiring() {
                 setIsInteracting(true);
                 handleMove(e.touches[0].clientX);
               }}
-              className="relative w-full h-115 rounded-2xl overflow-hidden cursor-grab active:cursor-grabbing"
+              className="relative w-full h-80 md:h-115 rounded-2xl overflow-hidden cursor-grab active:cursor-grabbing"
             >
               {/* Glow */}
               <motion.div

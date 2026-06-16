@@ -24,9 +24,8 @@ const HowItWorks = () => {
           </h1>
         </div>
       </div>
-      <p className="pt-10 text-2xl text-[#292727e0]">Featured Products</p>
       <motion.div
-        className="grid lg:grid-cols-3 mt-6 w-full gap-6"
+        className="grid lg:grid-cols-3 mt-16 w-full gap-6"
         ref={ref}
         initial="hidden"
         whileInView="visible"
@@ -43,7 +42,7 @@ const HowItWorks = () => {
         }}
       >
         <motion.div
-          className="group relative h-110 hover:shadow-lg rounded-lg text-center justify-center overflow-hidden bg-gray-200"
+          className="group relative md:h-110 hover:shadow-lg rounded-lg text-center justify-center overflow-hidden bg-gray-200"
           variants={{
             hidden: { opacity: 0, y: 30 },
             visible: {
@@ -53,7 +52,7 @@ const HowItWorks = () => {
             },
           }}
         >
-          <div className="w-full p-4 lg:p-16 h-full">
+          <div className="w-full p-10 lg:p-16 h-full">
             <Image
               src={cream}
               alt=""
@@ -68,7 +67,7 @@ const HowItWorks = () => {
           </div>
         </motion.div>
         <motion.div
-          className="group relative h-110 hover:shadow-lg rounded-lg text-center justify-center overflow-hidden bg-gray-200"
+          className="group relative md:h-110 hover:shadow-lg rounded-lg text-center justify-center overflow-hidden bg-gray-200"
           variants={{
             hidden: { opacity: 0, y: 30 },
             visible: {
@@ -78,7 +77,7 @@ const HowItWorks = () => {
             },
           }}
         >
-          <div className="w-full p-16 h-full">
+          <div className="w-full p-10 lg:p-16 h-full">
             <Image
               src={cream2}
               alt=""
@@ -93,7 +92,7 @@ const HowItWorks = () => {
           </div>
         </motion.div>
         <motion.div
-          className="group relative h-110 hover:shadow-lg rounded-lg text-center justify-center overflow-hidden bg-gray-200"
+          className="group relative md:h-110 hover:shadow-lg rounded-lg text-center justify-center overflow-hidden bg-gray-200"
           variants={{
             hidden: { opacity: 0, y: 30 },
             visible: {
@@ -103,7 +102,7 @@ const HowItWorks = () => {
             },
           }}
         >
-          <div className="w-full h-full p-16">
+          <div className="w-full h-full p-10 lg:p-16">
             <div className="w-full h-full">
               <Image
                 src={cream4}

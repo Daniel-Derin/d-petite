@@ -9,7 +9,7 @@ const ProductCard = ({ product }: { product: Product }) => {
   return (
     <div>
       <div>
-        <p className=" line-clamp-1 text-xl">{product?.name}</p>
+        <p className=" line-clamp-1 md:text-xl">{product?.name}</p>
         {product?.images && (
           <Link href={`/product/${product?.slug?.current}`} className="group">
             <Image
@@ -30,7 +30,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           </div>
         )}
       </div>
-      <div className="py-3 px-2 flex flex-col gap-1.5 border-t-0 rounded-md rounded-tl-none rounded-tr-none">
+      <div className="py-3 px-2 flex flex-col gap-1.5 border-t-0 rounded-md rounded-tl-none rounded-tr-none max-sm:text-sm">
         <PriceView price={product?.price} />
       </div>
     </div>

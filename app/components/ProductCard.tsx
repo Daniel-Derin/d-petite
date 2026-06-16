@@ -32,7 +32,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         )}
       </div>
       <div className="py-3 px-2 flex flex-col gap-1.5 bg-zinc-50 border-t-0 rounded-md rounded-tl-none rounded-tr-none">
-        <p className="font-bold line-clamp-1">{product?.name}</p>
+        <p className="font-bold text-md line-clamp-1">{product?.name}</p>
         <p className="max-sm:leading-none">{product.description}</p>
         <PriceView price={product?.price} />
 
